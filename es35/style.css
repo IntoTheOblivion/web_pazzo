@@ -1,0 +1,26 @@
+h1{
+    font-size: 120%;
+    color: green;
+    background-color: black;
+    text-align: center;
+}
+h2{
+    font-size: 110%;
+    color: grey;
+    background-color: blue;
+    text-align: center;
+}
+p{
+    font-size: 90%;
+    font-family: Arial;
+    color:darkblue;
+    text-align: justify;
+}
+div{
+    font-size: 80%;
+    color: violet;
+    font-family: serif;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+}
