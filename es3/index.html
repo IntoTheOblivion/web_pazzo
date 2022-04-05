@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var cont=0;
+        function conta(){
+            document.getElementById("counter").innerHTML = cont++;
+        }
+        function reset(){
+            document.getElementById("counter").innerHTML = 0;
+        }
+
+    </script>
+</head>
+<body>
+  <button onclick="conta()" >CLICK</button>
+  <button onclick="reset()" >RESET</button>
+  <p id="counter">0</p>
+</body>
+</html>
