@@ -10,13 +10,22 @@
         }
         function reset(){
             document.getElementById("counter").innerHTML = 0;
+            cont=0;
         }
 
     </script>
+    <style>
+        button{
+            width: 250px;
+            height: 150px;
+        }
+    </style>
 </head>
 <body>
+<center>
   <button onclick="conta()" >CLICK</button>
   <button onclick="reset()" >RESET</button>
-  <p id="counter">0</p>
+  <p style="font-size: 100px" id="counter">0</p>
+</center>
 </body>
 </html>
