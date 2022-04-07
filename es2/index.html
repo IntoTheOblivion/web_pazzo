@@ -6,10 +6,10 @@
     <script>
         var data = new Date();
         var ora, minuti, secondi;
-        ora = data.getHours() + " ore";
-        minuti = data.getMinutes() + " minuti";
-        secondi = data.getSeconds()+ " secondi";
-        document.write("Sono le:<br />");
+        ora = data.getDate() + " giorno";
+        minuti = data.getMonth()+1 + " mese";
+        secondi = data.getFullYear()+ " anno";
+        document.write("è il:<br />");
         document.write(ora+"<br />");
         document.write(minuti+"<br />");
         document.write(secondi);
