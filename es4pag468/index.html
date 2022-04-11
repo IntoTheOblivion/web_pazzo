@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>calcolo costo iva</title>
+    <script>
+    function caloclo(){
+        let cost= eval(document.getElementById("costo").value);
+        let iva= eval(document.getElementById("iva").value);
+        iva=(cost*iva)/100;
+        document.getElementById("priva").value=iva;
+        document.getElementById("tot").value=cost+iva;
+    }
+    </script>
+</head>
+<body>
+    <center>
+    <form>
+        <table>
+            <tr>
+                <th>DATI INIZIALI</th>
+                <th>RISULTATI</th>
+            </tr>
+            <tr>
+                <td>prezzo: <input id="costo" type="number"></td>
+                <td>prezzo totale: <input id="tot" type="number" readonly></td>
+            </tr>
+            <tr>
+                <td>% IVA: <input id="iva" type="number" value="%"></td>
+                <td>prezzo IVA: <input id="priva" type="number" readonly></td>
+            </tr>
+        </table>
+        <br><br>
+        <input type="button" value="calocla" onclick="caloclo()">
+    </center>
+    </form>
+
+</body>
+</html>

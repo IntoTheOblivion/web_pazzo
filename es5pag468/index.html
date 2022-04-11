@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        function triangolo(){
+            let b= eval(document.getElementById("base").value);
+            let a= eval(document.getElementById("altezza").value);
+            document.getElementById("area").value=b*a;
+        }
+    </script>
+</head>
+<body>
+<table>
+    <tr>
+        <H1>CALCOLO AREA TRIANGOLO</H1>
+    </tr>
+    <tr>
+        <td>base: <input id="base" type="number"></td>
+    </tr>
+    <tr>
+        <td>altezza: <input id="altezza" type="number"></td>
+    </tr>
+    <tr>
+        <td>area: <input id="area" type="number" readonly></td>
+    </tr>
+
+
+</table>
+<br>
+<input type="button" value="calocla" onclick="triangolo()">
+</body>
+</html>
