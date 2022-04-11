@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        function cerchio(){
+            let raggio= eval(document.getElementById("raggio").value);
+            document.getElementById("circonferenza").value=raggio*(Math.PI*2);
+        }
+    </script>
+</head>
+<body>
+<table>
+    <tr>
+        <H1>CALCOLO CIRCONFERENZA CERCHIO</H1>
+    </tr>
+    <tr>
+        <td>raggio: <input id="raggio" type="number"></td>
+    </tr>
+    <tr>
+        <td>circonferenza: <input id="circonferenza" type="number"  readonly></td>
+    </tr>
+</table>
+<br>
+<input type="button" value="calocla" onclick="cerchio()">
+</body>
+</html>
