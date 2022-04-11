@@ -1,0 +1,24 @@
+body{
+    background-color: cadetblue;
+    background-image: url("http://newenglishtravel.com/old/images/school.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+h1{
+    font-family: "Berlin Sans FB Demi";
+    font-size: 70px;
+    color: wheat;
+    background-color: black;
+}
+table {
+    background-color: wheat;
+    font-size: 30px;
+    font-family: font-weight;
+    border-collapse:collapse
+}
+td, th {
+    width: 300px;
+    border:1px solid black;
+    padding:8px;
+}
