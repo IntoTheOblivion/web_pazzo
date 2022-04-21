@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function imposta() {
+            let reddito;
+            let imposta;
+            reddito = eval(document.getElementById("imposta").value);
+            if (reddito <= 30000)
+                imposta = 20;
+            else
+                imposta = 30;
+
+            document.getElementById("totale").value=;
+        }
+    </script>
+</head>
+<body>
+reddito: <input type="number" id="imposta">
+<br><br>
+reddito con imosta: <input type="number" readonly>
+<br><br>
+<button onclick="imposta" id="totale">calcola</button>
+</body>
+</html>
