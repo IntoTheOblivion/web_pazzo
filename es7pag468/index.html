@@ -8,20 +8,21 @@
             let reddito;
             let imposta;
             reddito = eval(document.getElementById("imposta").value);
-            if (reddito <= 30000)
+            if (reddito <= 30000) {
                 imposta = 20;
-            else
+            } else {
                 imposta = 30;
-
-            document.getElementById("totale").value=;
+            }
+            reddito -= (reddito * imposta) / 100;
+            document.getElementById("totale").value = reddito;
         }
     </script>
 </head>
 <body>
 reddito: <input type="number" id="imposta">
 <br><br>
-reddito con imosta: <input type="number" readonly>
+reddito con imosta: <input type="number" id="totale" readonly>
 <br><br>
-<button onclick="imposta" id="totale">calcola</button>
+<button onclick="imposta()">calcola</button>
 </body>
 </html>
