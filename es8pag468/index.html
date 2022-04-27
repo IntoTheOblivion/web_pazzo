@@ -4,6 +4,54 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<script>
+    var data = new Date();
+    var giorno, mese, anno;
+    giorno = data.getDate() + " giorno";
+    switch (data.getMonth()+1){
+        case 1:
+            mese = "Gennaio";
+            break;
+        case 2:
+            mese = "Febbraio";
+            break;
+        case 3:
+            mese = "Marzo";
+            break;
+        case 4:
+            mese = "Aprile";
+            break;
+        case 5:
+            mese = "Maggio";
+            break;
+        case 6:
+            mese = "Giugno";
+            break;
+        case 7:
+            mese = "Luglio";
+            break;
+        case 8:
+            mese = "Agosto";
+            break;
+        case 9:
+            mese = "Settembre";
+            break;
+        case 10:
+            mese = "Ottobre";
+            break;
+        case 11:
+            mese = "Novembre";
+            break;
+        case 12:
+            mese = "Dicembre";
+            break;
+    }
+    anno = data.getFullYear()+ " anno";
+    document.write("è il:<br />");
+    document.write(giorno+"<br />");
+    document.write(mese+"<br />");
+    document.write(anno);
+</script>
 <body>
 
 </body>
