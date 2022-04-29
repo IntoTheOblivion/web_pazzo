@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giacenze</title>
+    <script>
+        var vet=[];
+        function input_giacenza() {
+            let codice = eval(document.getElementById("codice").value);
+            let giorni = eval(document.getElementById("giorni").value);
+            var pacco = {c: codice, g: giorni}
+            vet.push(pacco);
+
+        }
+        function calcola_gicenza() {
+            let area = "codice--------giorni giacenza\n";
+            let limite = eval(document.getElementById("giacenza").value);
+            for (let i = 0; i < vet.length; i++) {
+                if (vet[i].g <= limite) {
+                    area += vet[i].c.toString() + "           " + vet[i].g + "\n";
+                }
+            }
+            document.getElementById("text_area").innerHTML = area;
+        }
+    </script>
+</head>
+<body>
+<table>
+    <tr>
+        <H1>Inserisci nuovo pacco</H1>
+    </tr>
+    <tr>
+        <td><br>Numero identificativo: <input id="codice" type="number"></td>
+    </tr>
+    <tr>
+        <td><br>
+            Numero giorni: <input id="giorni" type="number"><br>
+            <input type="button" value="Aggiungi" onclick="input_giacenza()">
+        </td>
+    </tr>
+    <tr>
+        <td><br><br><br>
+            Giacenza max: <input id="giacenza" type="number">
+            <input type="button" value="Calcola" onclick="calcola_gicenza()">
+        </td>
+    </tr>
+</table>
+<br>
+<textarea id="text_area" rows="40" cols="80" style="scroll-behavior: auto" readonly>
+
+</textarea>
+</body>
+</html>
