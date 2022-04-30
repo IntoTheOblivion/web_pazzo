@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <title>Giacenze</title>
     <script>
-        var vet=[];
+        var vet1=[];
+        var vet2=[];
         function input_giacenza() {
             let codice = eval(document.getElementById("codice").value);
             let giorni = eval(document.getElementById("giorni").value);
-            var pacco = {c: codice, g: giorni}
-            vet.push(pacco);
+            vet1.push(codice);
+            vet2.push(giorni);
         }
         function calcola_gicenza() {
             let area = "codice--------giorni giacenza\n";
             let limite = eval(document.getElementById("giacenza").value);
-            for (let i = 0; i < vet.length; i++) {
-                if (vet[i].g <= limite) {
-                    area += vet[i].c + "           " + vet[i].g + "\n";
+            for (let i = 0; i < vet1.length; i++) {
+                if (vet2[i] <= limite) {
+                    area += vet1[i]+ "           " + vet2[i] + "\n";
                 }
             }
             document.getElementById("text_area").innerHTML = area;
