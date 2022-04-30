@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var matrice=[2][2];
+        matrice.
+
+        function sium() {
+            let cod = eval(document.getElementById("codice").value);
+            matrice.push(cod);
+            for (let i = 0; i<=matrice.length; i++) {
+                for (let y = 0; i<=matrice.length; y++) {
+                    document.getElementById("text_area").innerHTML = matrice[i][y]+"\n";
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+<table>
+    <tr>
+        <td><br>Numero identificativo: <input id="codice" type="number"></td>
+        <input type="button" value="input" onclick="sium()">
+    </tr>
+
+</table>
+<br>
+<textarea id="text_area" rows="40" cols="80" style="scroll-behavior: auto" readonly>
+
+</textarea>
+
+</body>
+</html>
