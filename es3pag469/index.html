@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function fast(){
+            let lung= eval(document.getElementById("lunghezza").value);
+            let temp= eval(document.getElementById("tempo").value);
+
+            document.getElementById("fast").value=lung/temp;
+        }
+    </script>
+</head>
+<body>
+<table>
+<tr>
+    <H1>CALCOLO VELOCITA'</H1>
+</tr>
+<tr>
+    <td>Chilometri percorsi: <input id="lunghezza" type="number">   Km<br></td>
+</tr>
+<tr>
+    <td>Ore impiegate: <input id="tempo" type="number">   h<br></td>
+</tr>
+<tr>
+    <td><input type="button" value="calcola" onclick="fast()"><br></td>
+</tr>
+</table>
+<br>
+Velocità andatura: <input id="fast" type="number" readonly> Km/h
+
+</body>
+</html>

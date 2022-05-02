@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function ibm(){
+            let peso= eval(document.getElementById("altezza").value);
+            let altezza= eval(document.getElementById("peso").value);
+            altezza=altezza/100;
+            let indici_ibm= peso/(altezza*altezza);
+            if(indici_ibm<18){
+                document.getElementById("indice").innerHTML= "BASSO";
+            }
+            else if(indici_ibm>25){
+                document.getElementById("indice").innerHTML= "ALTO";
+            }else{
+                document.getElementById("indice").innerHTML= "CORRETTO";
+            }
+        }
+    </script>
+</head>
+<body>
+<form>
+<table>
+    <tr>
+        <H1>CALCOLO IBM</H1>
+    </tr>
+    <tr>
+        <td>Peso: <input id="altezza" type="number">   Kg<br></td>
+    </tr>
+    <tr>
+        <td>Altezza: <input id="peso" >   cm<br></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="calcola" onclick="ibm()"><br></td>
+    </tr>
+</table>
+
+<br>
+IBM: <input id="indice" type="text" readonly>
+</form>
+</body>
+</html>
