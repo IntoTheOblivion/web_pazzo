@@ -10,13 +10,14 @@
             let giorni = eval(document.getElementById("giorni").value);
             var pacco = {c: codice, g: giorni}
             vet.push(pacco);
+
         }
         function calcola_gicenza() {
             let area = "codice--------giorni giacenza\n";
             let limite = eval(document.getElementById("giacenza").value);
             for (let i = 0; i < vet.length; i++) {
                 if (vet[i].g <= limite) {
-                    area += vet[i].c + "           " + vet[i].g + "\n";
+                    area += vet[i].c.toString() + "           " + vet[i].g + "\n";
                 }
             }
             document.getElementById("text_area").innerHTML = area;
