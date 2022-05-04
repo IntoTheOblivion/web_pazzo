@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giacenze</title>
+    <script>
+        var vet=[];
+        var area = "NOME ARTICOLO--------COSTO ARTICOLO\n";
+        var totale;
+        function aggiungi() {
+            totale=0;
+            let nome = eval(document.getElementById("nome").value);
+            let costo = eval(document.getElementById("costo").value);
+            var articolo = {nom: nome, cost: costo}
+            vet.push(articolo);
+            for (let i = 0; i < vet.length; i++) {
+                area += vet[i].nom + "           " + vet[i].cost + "\n";
+                totale+=vet[i].cost;
+            }
+            document.getElementById("text_area").innerHTML = area;
+            document.getElementById("nome").innerHTML=" ";
+            document.getElementById("costo").innerHTML=" ";
+        }
+        function calcola_totale() {
+            document.getElementById("tot").innerHTML = totale;
+        }
+        function reset(){
+            document.getElementById("text_area").innerHTML = " ";
+            document.getElementById("tot").innerHTML = " ";
+        }
+    </script>
+</head>
+<body>
+<table>
+    <tr>
+        <H1>Inserisci nuovo pacco</H1>
+    </tr>
+    <tr>
+        <td><br>Nome articolo: <input id="nome" type="text"></td>
+    </tr>
+    <tr>
+        <td><br>
+            Costo articolo: <input id="costo" type="text"><br><br>
+            <input type="button" value="Aggiungi" onclick="aggiungi()">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <textarea id="text_area" rows="30" cols="50" style="scroll-behavior: auto" readonly></textarea>
+        </td>
+    </tr>
+
+    <tr>
+        <td><br><br><br>
+            Costo totale: <input id="tot" type="number"><br><br>
+            <input type="button" value="Totale" onclick="calcola_totale()">
+            <input type="button" value="Reset" onclick="reset()">
+        </td>
+    </tr>
+</table>
+<br>
+
+
+
+</body>
+</html>

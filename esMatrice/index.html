@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script>
+  function mat(){
+    let matrice=[1][1];
+    let m1= eval(document.getElementById("matrice1").value);
+    let m2= eval(document.getElementById("matrice2").value);
+    let m3= eval(document.getElementById("matrice3").value);
+    let m4= eval(document.getElementById("matrice4").value);
+    document.getElementById("text_area").innerHTML=m1+" "+m2+" "+m3+" "+m4;
+  }
+  </script>
+</head>
+<body>
+<table>
+  <tr>
+    <H1>MATRICE</H1>
+  </tr>
+  <tr>
+    <td>matrice 0 0: <input id="matrice1" type="number"><br></td>
+  </tr>
+  <tr>
+    <td>matrice 0 1: <input id="matrice2" type="number"> <br></td>
+  </tr>
+  <tr>
+    <td>matrice 1 0: <input id="matrice3" type="number"> <br></td>
+  </tr>
+  <tr>
+    <td>matrice 1 1: <input id="matrice4" type="number"> <br></td>
+  </tr>
+  <tr>
+    <td><input type="button" value="calcola" onclick="mat()"><br></td>
+  </tr>
+</table>
+<textarea id="text_area" rows="20" cols="40" style="scroll-behavior: auto" readonly>
+
+</textarea>
+
+</body>
+</html>

@@ -4,24 +4,18 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script>
-        function ibm(){
+        function calcola(){
+            let indice_ibm=0;
             let peso= eval(document.getElementById("peso").value);
             let long= eval(document.getElementById("alt").value);
-            let indices_ibm= peso/(long*long);
-            let risultato;
-            if(indices_ibm<18){
-                risultato="BASSO";
-                document.getElementById("ibm").innerText= risultato;
-                document.write(risultato);
+            indice_ibm= (peso/(long*long));
+            if(indice_ibm<18){
+                document.getElementById("ibm").value= "BASSO";
             }
-            else if(indices_ibm>25){
-                risultato="ALTO";
-                document.getElementById("ibm").innerText= risultato;
-                document.write(risultato);
+            else if(indice_ibm>25){
+                document.getElementById("ibm").value = "ALTO";
             }else{
-                risultato="CORRETTO";
-                document.getElementById("ibm").innerText= risultato;
-                document.write(risultato);
+                document.getElementById("ibm").value = "CORRETTO";
             }
         }
     </script>
@@ -33,18 +27,17 @@
         <H1>CALCOLO IBM</H1>
     </tr>
     <tr>
-        <td>Peso: <input id="alt" type="number">   Kg<br></td>
+        <td>Peso: <input id="peso" type="number">   Kg<br></td>
     </tr>
     <tr>
-        <td>Altezza: <input id="peso" >  m<br></td>
+        <td>Altezza: <input id="alt" type="number">  m<br></td>
     </tr>
     <tr>
-        <td><input type="button" value="calcola" onclick="ibm()"><br></td>
+        <td><input type="button" value="calcola" onclick="calcola()"><br></td>
     </tr>
 </table>
-
 <br>
-IBM: <input id="ibm" readonly>
+IBM: <input id="ibm" type="text" readonly>
 </form>
 </body>
 </html>
