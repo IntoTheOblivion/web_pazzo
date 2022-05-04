@@ -5,42 +5,40 @@
     <title>Giacenze</title>
     <script>
         var vet=[];
-        var area = "NOME ARTICOLO--------COSTO ARTICOLO\n";
-        var totale;
         function aggiungi() {
-            totale=0;
-            let nome = eval(document.getElementById("nome").value);
+            let area = "ELENCO COSTO ARTICOL1\n";
             let costo = eval(document.getElementById("costo").value);
-            var articolo = {nom: nome, cost: costo}
-            vet.push(articolo);
+            vet.push(costo);
             for (let i = 0; i < vet.length; i++) {
-                area += vet[i].nom + "           " + vet[i].cost + "\n";
-                totale+=vet[i].cost;
+                area += vet[i]+ "\n";
             }
-            document.getElementById("text_area").innerHTML = area;
-            document.getElementById("nome").innerHTML=" ";
-            document.getElementById("costo").innerHTML=" ";
+            document.getElementById("text_area").value = area;
+            document.getElementById("costo").value=" ";
         }
         function calcola_totale() {
-            document.getElementById("tot").innerHTML = totale;
+            let totale=0;
+            for (let i = 0; i < vet.length; i++) {
+                totale+=vet[i];
+            }
+            document.getElementById("tot").value = totale;
         }
         function reset(){
-            document.getElementById("text_area").innerHTML = " ";
-            document.getElementById("tot").innerHTML = " ";
+            while(vet.length > 0) {
+                vet.pop();
+            }
+            document.getElementById("text_area").value = " ";
+            document.getElementById("tot").value = " ";
         }
     </script>
 </head>
 <body>
 <table>
     <tr>
-        <H1>Inserisci nuovo pacco</H1>
-    </tr>
-    <tr>
-        <td><br>Nome articolo: <input id="nome" type="text"></td>
+        <H1>Inserisci nuovo Articolo</H1>
     </tr>
     <tr>
         <td><br>
-            Costo articolo: <input id="costo" type="text"><br><br>
+            Costo articolo: <input id="costo" type="number"><br><br>
             <input type="button" value="Aggiungi" onclick="aggiungi()">
         </td>
     </tr>
@@ -53,7 +51,7 @@
     <tr>
         <td><br><br><br>
             Costo totale: <input id="tot" type="number"><br><br>
-            <input type="button" value="Totale" onclick="calcola_totale()">
+            <input type="button" value="Totale" onclick="calcola_totale()" readonly>
             <input type="button" value="Reset" onclick="reset()">
         </td>
     </tr>
