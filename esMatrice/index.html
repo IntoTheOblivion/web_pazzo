@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <title>Title</title>
   <script>
-  function mat(){
-    let matrice=[1][1];
-    let m1= eval(document.getElementById("matrice1").value);
-    let m2= eval(document.getElementById("matrice2").value);
-    let m3= eval(document.getElementById("matrice3").value);
-    let m4= eval(document.getElementById("matrice4").value);
-    document.getElementById("text_area").innerHTML=m1+" "+m2+" "+m3+" "+m4;
+  function matrice(){
+    let matrice=[[],[]];
+    let area="";
+    matrice[0][0]= eval(document.getElementById("matrice1").value);
+    matrice[0][1]= eval(document.getElementById("matrice2").value);
+    matrice[1][0]= eval(document.getElementById("matrice3").value);
+    matrice[1][1]= eval(document.getElementById("matrice4").value);
+    for(let i=0;i<matrice.length;i++){
+      for(let y=0;y<matrice.length;y++){
+        area+=matrice[i][y]+" ";
+      }
+    }
+    document.getElementById("text_area").innerText=area;
   }
   </script>
 </head>
@@ -32,7 +38,7 @@
     <td>matrice 1 1: <input id="matrice4" type="number"> <br></td>
   </tr>
   <tr>
-    <td><input type="button" value="calcola" onclick="mat()"><br></td>
+    <td><input type="button" value="calcola" onclick="matrice()"><br></td>
   </tr>
 </table>
 <textarea id="text_area" rows="20" cols="40" style="scroll-behavior: auto" readonly>
