@@ -24,7 +24,7 @@
     }
 
     function dopo() {
-        let V = [[], []];
+        let V = [[],[]];
         let areaDopo = "Visualizzazione:\n";
         V[0][0] = eval(document.getElementById("prodotto1A").value);
         V[0][1] = eval(document.getElementById("prodotto2A").value);
@@ -70,7 +70,6 @@
                 areaDopo += "\n"
                 areaDopo += "MERCATO B: ";
             }
-
             for (let y = 0; y < 3; y++) {
                 areaDopo += V[i][y] + "   ";
             }
