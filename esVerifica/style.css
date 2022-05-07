@@ -1,0 +1,19 @@
+
+body{
+    color: white;
+    background: black;
+}
+textarea{
+    background: #FFBB00;
+    color: black;
+}
+#fild1{
+    background: green;
+}
+#fild2{
+    background: red;
+
+}
+.alig {
+    text-align: center;
+}

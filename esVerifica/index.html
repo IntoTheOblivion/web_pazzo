@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script type="text/javascript" src="scriptjs.js"></script>
+    <title>Mercato</title>
+
+</head>
+<body>
+<form>
+
+    <fieldset id="fild1">
+        <legend>MERCATO A</legend>
+        <div class="alig">
+        prodotto 1: <input id="prodotto1A" type="number">
+        prodotto 2: <input id="prodotto2A" type="number">
+        prodotto 3: <input id="prodotto3A" type="number">
+        </div>
+
+    </fieldset>
+
+    <br><br>
+    <input type="button" value="Prima" onclick="prima()">
+    <input type="button" value="Dopo" onclick="dopo()">
+    <input type="reset" value="Reset">
+    <select id="incremento">
+        <option value="0"></option>
+        <option value="1">15% 20%</option>
+        <option value="2">25% 30%</option>
+        <option value="3">35% 40%</option>
+    </select>
+    <br><br>
+
+    <fieldset id="fild2">
+        <legend>MERCATO B</legend>
+        <div class="alig">
+        prodotto 1: <input id="prodotto1B" type="number">
+        prodotto 1: <input id="prodotto2B" type="number">
+        prodotto 1: <input id="prodotto3B" type="number">
+        </div>
+
+    </fieldset>
+    <br><br>
+</form>
+<br>
+<textarea id="text_area" rows="20" cols="60" style="scroll-behavior: auto" readonly> visualizzazione:</textarea>
+</body>
+</html>

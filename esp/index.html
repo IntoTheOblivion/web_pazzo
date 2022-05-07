@@ -1,88 +1,69 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>ESP32-CAM Robot</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body {background-color: dimgrey; font-family: Arial; text-align: center; margin:0px auto; padding-top: 30px;}
-        table { margin-left: auto; margin-right: auto; }
-        td { padding: 8px;}
-        .button {
-            background-color: black;
-            border: 1px solid whitesmoke;
-            border-radius: 8px;
-            box-sizing: border-box;
-            color: whitesmoke;
-            cursor: pointer;
-            display: inline-block;
-            font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
-            font-size: 30px;
-            font-weight: 700;
-            line-height: 30px;
-            margin: 0;
-            outline: none;
-            padding: 13px 23px;
-            position: relative;
-            text-align: center;
-            text-decoration: none;
-            touch-action: manipulation;
-            transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
-            user-select: none;
-            -webkit-user-select: none;
-            width: auto;
-        }
-        .button:focus-visible {
-            box-shadow: whitesmoke 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
-            transition: box-shadow .2s;
-        }
+    <meta charset="UTF-8">
+    <title>Giacenze</title>
+    <script>
+        var vet=[[],[]];
 
-        .button:active {
-            background-color: whitesmoke;
-            border-color: black;
-            color: black;
-            transform: scale(.96);
-        }
+        function aggiungi() {
 
-        .button:disabled {
-            border-color: whitesmoke;
-            color: black;
-            cursor: not-allowed;
-            opacity: 1;
-        }
-        img {
-            width: 283px ;
-            height: 400px ;
-            -webkit-transform: rotate(270deg);
-            -moz-transform: rotate(270deg);
-            -o-transform: rotate(270deg);
-            -ms-transform: rotate(270deg);
-            transform: rotate(270deg);
-        }
+            vet.push("10");
+            vet.push("10");
+            vet.push("10");
+            vet.push("10");
+            vet.push("10");
+            for (let i = 0; i < vet.length; i++) {
+                //document.write(vet.pop());
+            }
 
-        @media only screen and (min-width: 600px) {
-            img{width: 388px ;
-                height: 550px ;}
+            document.write(vet[[0],[0]]);
+
         }
-        @media only screen and (min-width: 768px) {
-            img{width: 480px ;
-                height: 680px ;}
+        function calcola_totale() {
+            let totale=0;
+            for (let i = 0; i < vet.length; i++) {
+                totale+=vet[i];
+            }
+            document.getElementById("tot").value = totale;
         }
-    </style>
+        function reset(){
+            while(vet.length > 0) {
+                vet.pop();
+            }
+            document.getElementById("text_area").value = " ";
+            document.getElementById("tot").value = " ";
+        }
+    </script>
 </head>
 <body>
-<img src="" id="photo" >
 <table>
-    <tr><td colspan="3" align="center"><button class="button" onmousedown="toggleCheckbox('up');" ontouchstart="toggleCheckbox('up');">Up</button></td></tr>
-    <tr><td align="center"><button class="button" onmousedown="toggleCheckbox('left');" ontouchstart="toggleCheckbox('left');">Left</button></td><td align="center"></td>
-        <td align="center"><button class="button" onmousedown="toggleCheckbox('right');" ontouchstart="toggleCheckbox('right');">Right</button></td></tr>
-    <tr><td colspan="3" align="center"><button class="button" onmousedown="toggleCheckbox('down');" ontouchstart="toggleCheckbox('down');">Down</button></td></tr>
+    <tr>
+        <H1>Inserisci nuovo Articolo</H1>
+    </tr>
+    <tr>
+        <td><br>
+            Costo articolo: <input id="costo" ><br><br>
+            <input type="button" value="Aggiungi" onclick="aggiungi()">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <textarea id="text_area" rows="30" cols="50" style="scroll-behavior: auto" readonly></textarea>
+        </td>
+    </tr>
+
+    <tr>
+        <td><br><br><br>
+            Costo totale: <input id="tot" type="number"><br><br>
+            <input type="button" value="Totale" onclick="calcola_totale()" readonly>
+            <input type="button" value="Reset" onclick="reset()">
+        </td>
+    </tr>
 </table>
-<script>
-    function toggleCheckbox(x) {
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", "/action?go=" + x, true);
-        xhr.send();
-    }
-    window.onload = document.getElementById("photo").src = window.location.href.slice(0, -1) + ":81/stream";
-</script>
+<br>
+
+
+
 </body>
 </html>
