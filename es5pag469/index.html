@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function creaGrafico(){
+            var disegno=document.getElementById('disegno');
+            var context=disegno.getContext('2d');
+            var input1=eval(document.getElementById('M').value);
+            var input2=eval(document.getElementById('F').value);
+
+            var total=input1+input2;
+
+            var angle1=2*Math.PI*input1/total;
+            var angle2=2*Math.PI*input2/total;
+
+            context.beginPath();
+            context.arc(100,100,50,0,angle1, false);
+            context.lineWidth=2;
+            context.lineTo(100,100);
+            context.fillStyle="rgba(255,255,0,1)";
+            context.fill();
+            context.closePath();
+
+            context.beginPath();
+            context.arc(100,100,50,angle1,angle2+angle1,false);
+            context.lineWidth=2;
+            context.lineTo(100,100);
+            context.fillStyle="rgba(0,240,255,1)";
+            context.fill();
+            context.closePath();
+
+        }
+    </script>
+</head>
+<body>
+
+<table>
+    <tr>
+        <H1>CALCOLO PERCENTUALE CLASSE</H1>
+    </tr>
+    <tr>
+        <td>Maschi: <input id="M" type="number"></td>
+    </tr>
+    <tr>
+        <td>Femmine: <input id="F" type="number"></td>
+    </tr>
+</table>
+<br>
+<input type="button" value="calocla" onclick="creaGrafico()">
+<br><br>
+<canvas id="disegno" width="400" height="200"></canvas>
+</body>
+</html>
