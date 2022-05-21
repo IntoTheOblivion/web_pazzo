@@ -3,11 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script>
-        function creaGrafico(){
-            
+        function creaGrafico() {
+            let f = document.getElementById("francia").value;
+            let i = document.getElementById("italia").value;
+            let g = document.getElementById("germania").value;
+            let s = document.getElementById("spagnia").value;
+            var xValues = ["Italia", "Francia", "Spagnia", "Germania"];
+            var yValues = [i,f,g,s];
+            var barColors = ["red", "blue", "orange", "green"];
+
+            new Chart("myChart", {
+                type: "bar",
+                data: {
+                    labels: xValues,
+                    datasets: [{
+                        backgroundColor: barColors,
+                        data: yValues
+                    }]
+                },
+                options: {
+                    legend: {display: false},
+                    title: {
+                        display: true,
+                    }
+                }
+            });
         }
     </script>
+
 </head>
 <body>
 <table>
@@ -18,15 +43,15 @@
         <td>Francia: <input id="francia" type="number"></td>
     </tr>
     <tr>
-        <td>Germania: <input id=germaniaM" type="number"></td>
+        <td>Germania: <input id="germania" type="number"></td>
     </tr>
     <tr>
-        <td>Svizzera: <input id="svizzera" type="number"></td>
+        <td>Spagnia: <input id="spagnia" type="number"></td>
     </tr>
 </table>
 <br>
 <input type="button" value="calocla" onclick="creaGrafico()">
 <br><br>
-<canvas id="disegno" width="400" height="200"></canvas>
+<canvas id="myChart" style="width: 20%;height: 20%"></canvas>
 </body>
 </html>
